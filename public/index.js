@@ -9,9 +9,6 @@ const homeView = document.getElementById("home-view");
 const iframesContainer = document.getElementById("iframes-container");
 const tabsContainer = document.getElementById("tabs-container");
 
-// =========================================================================
-// 0. ENGINES CONFIGURATION (26 Engines in total)
-// =========================================================================
 const SEARCH_ENGINES = {
     google: { name: "Google", url: "https://www.google.com/search?q=%s" },
     bing: { name: "Bing", url: "https://www.bing.com/search?q=%s" },
@@ -61,9 +58,6 @@ searchEngine.addEventListener('change', () => {
     document.body.setAttribute('data-theme', themeId);
 });
 
-// =========================================================================
-// 1. AUDIO ENGINE (Opera GX style clicks)
-// =========================================================================
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 function playClickSound() {
     const soundEnabled = document.getElementById('sound-toggle').checked;
@@ -93,9 +87,7 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// =========================================================================
-// 2. HOSHI STARS (Space Background)
-// =========================================================================
+
 const canvas = document.getElementById('starfield');
 if (canvas) {
     const ctx = canvas.getContext('2d');
@@ -145,9 +137,7 @@ if (canvas) {
     animate();
 }
 
-// =========================================================================
-// 3. TYPING EFFECT (Curiosity)
-// =========================================================================
+
 const phrases = [
     "Navigating the void...", 
     "Igniting Scramjet Engine...", 
@@ -185,9 +175,7 @@ function typeEffect() {
 }
 if(typewriterText) typeEffect();
 
-// =========================================================================
-// 4. BROWSER TABS SYSTEM
-// =========================================================================
+
 let tabs = [];
 let activeTabId = null;
 let tabCounter = 0;
@@ -295,9 +283,7 @@ function go(url) {
 
 createNewTab();
 
-// =========================================================================
-// 5. SCRAMJET CORE
-// =========================================================================
+
 const { ScramjetController } = $scramjetLoadController();
 const scramjet = new ScramjetController({
     files: { wasm: "/scram/scramjet.wasm.wasm", all: "/scram/scramjet.all.js", sync: "/scram/scramjet.sync.js" },
@@ -350,9 +336,7 @@ form.addEventListener("submit", async (event) => {
     renderTabs();
 });
 
-// =========================================================================
-// 6. OFFICIAL WALLPAPER STORE (Merged Public & Secret)
-// =========================================================================
+
 const WALLPAPERS = {
     '62516': { name: 'GTA V Rain', type: 'gif', url: 'https://raw.githubusercontent.com/alexis2003martinezz-blip/komaos-wallpapers-code/main/Grand%20Theft%20Auto%20V%20Rain%20GIF.gif' },
     '78015': { name: 'Manga', type: 'gif', url: 'https://raw.githubusercontent.com/alexis2003martinezz-blip/komaos-wallpapers-code/main/Manga%20Wallpaper%20GIF%20(6).gif' },
